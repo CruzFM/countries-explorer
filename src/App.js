@@ -1,6 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
+import { Navbar } from "./components/Navbar/Navbar"
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
 
   return (
     <div>
-      <h1>
+      <Navbar />
+      <h1 className='bg-black text-white p-6'>
         Hola Fer, tenés axios instalado, ponete las pilas gil.
       </h1>
     </div>
