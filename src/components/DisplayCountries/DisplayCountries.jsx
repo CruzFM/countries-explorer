@@ -1,6 +1,6 @@
 
 
-export const { Home } = ()=>{
+export const { DisplayCountries } = ()=>{
     return(
         <h2>
             Soy Home

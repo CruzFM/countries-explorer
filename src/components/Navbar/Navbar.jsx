@@ -7,7 +7,7 @@ export const Navbar = ( {handleToggleDarkMode, isDarkMode} )=>{
                 Where in the world?
             </span>
             <div>
-                <span onClick={handleToggleDarkMode}>{isDarkMode ? "Luna": "Sol"}</span>
+                <span onClick={handleToggleDarkMode} className="dark:text-white">{isDarkMode ? "Luna": "Sol"}</span>
                 <span className="dark:text-pink-300">Dark Mode</span>
             </div>
 

@@ -2,29 +2,69 @@ import './App.css';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import { Navbar } from "./components/Navbar/Navbar"
+import { SearchAndFilter } from "./components/SearchAndFilter/SearchAndFilter"
+
 
 function App() {
 
   // AXIOS ESTÁ INSTALADO FER, NO TE OLVIDES
 
+
+
+  //--------------COUNTRIES STATE---------------
+
+  const [countries, setCountries] = useState([])
+
+
+  //--------------------------------------------
+
+
   useEffect(() =>{
     let endPoint = 'https://restcountries.com/v3.1/all'
     axios.get(endPoint)
-      .then(res=> console.log(res.data))
+      .then(res=> {
+        setCountries(res.data)
+        console.log(countries)
+      })
   }, [])
+
+  
+  //---------------DARK MODE-----------------
 
   const [isDarkMode, setIsDarkMode] = useState(false)
 
   const handleToggleDarkMode = ()=>{
     setIsDarkMode(prevDarkMode => !prevDarkMode);
+
+    // console.log(isDarkMode)
   }
 
+  // const storeDarkMode = ()=>{
+  //   isDarkMode ? localStorage.setItem("theme", "dark") : localStorage.setItem("theme", "light");
+  // }
+
+  // useEffect( ()=>{
+  //   storeDarkMode()
+  //   let darkModeStored = localStorage.getItem("theme");
+  //   if(darkModeStored === "dark" ){
+  //     setIsDarkMode(true)
+  //   } else{
+  //     setIsDarkMode(false)
+  //   }
+  // },[isDarkMode])
+
+  //----------------------------------------
+
   return (
-    <div className={isDarkMode ? "dark bg-black" : ""}>
+    <div className={isDarkMode===true ? "dark bg-black min-h-screen" : "min-h-screen"}>
       <Navbar handleToggleDarkMode={handleToggleDarkMode} isDarkMode={isDarkMode} />
-      <h1 className='bg-black text-white p-6'>
+      <SearchAndFilter />
+      <h1 className='dark:text-white p-6'>
         Hola Fer, tenés axios instalado, ponete las pilas gil.
       </h1>
+      <div>
+        {countries.length > 0 && countries.map(country => <div><h2>{country.name.common}</h2></div>)}
+      </div>
     </div>
   );
 }
