@@ -1,10 +1,13 @@
 
 
 
-export const { Card } = ()=>{
+export const  Card  = (props)=>{
     return(
-        <div>
-            <h2>Hola Fer, soy Card</h2>
+        <div className="w-32 p-3 px-5 border border-solid border-black">
+            <h3>{props.name}</h3>
+            <p>Population: {props.population}</p>
+            <p>Region: {props.region}</p>
+            <p>Capital: {props.capital}</p>
         </div>
     )
 }
