@@ -16,16 +16,15 @@ function App() {
 
   //--------------COUNTRIES STATE---------------
 
-  const [countries, setCountries] = useState([]);
+  // const [countries, setCountries] = useState([]);
 
-  //--------------------------------------------
 
-  useEffect(() => {
-    let endPoint = "https://restcountries.com/v3.1/all";
-    axios.get(endPoint).then((res) => {
-      setCountries(res.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   let endPoint = "https://restcountries.com/v3.1/all";
+  //   axios.get(endPoint).then((res) => {
+  //     setCountries(res.data);
+  //   });
+  // }, []);
 
   //---------------DARK MODE-----------------
 
