@@ -1,9 +1,14 @@
 import './App.css';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
-import { Navbar } from "./components/Navbar/Navbar"
+import { Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/Navbar/Navbar";
+
+
 import { SearchAndFilter } from "./components/SearchAndFilter/SearchAndFilter"
 import { Card } from "../src/components/Card/Card"
+import { DisplayCountries } from './components/DisplayCountries/DisplayCountries';
+import { Home } from './components/Home/Home';
 
 
 function App() {
@@ -19,7 +24,6 @@ function App() {
     let endPoint = "https://restcountries.com/v3.1/all";
     axios.get(endPoint).then((res) => {
       setCountries(res.data);
-      console.log(countries);
     });
   }, []);
 
@@ -59,21 +63,11 @@ function App() {
         handleToggleDarkMode={handleToggleDarkMode}
         isDarkMode={isDarkMode}
       />
-      <SearchAndFilter />
-      <h1 className="dark:text-white p-6">
-        Hola Fer, tenés axios instalado, ponete las pilas gil.
-      </h1>
-      <div>
-        {countries.length > 0 &&
-          countries.map((country) => (
-            <Card
-              name={country.name.common}
-              capital={country.capital}
-              region={country.region}
-              population={country.population}
-            />
-          ))}
-      </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/countries:name" />
+      </Routes>
     </div>
   );
 }

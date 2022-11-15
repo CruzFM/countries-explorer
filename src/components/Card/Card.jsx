@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 
 
 export const  Card  = (props)=>{
@@ -8,6 +8,7 @@ export const  Card  = (props)=>{
             <p>Population: {props.population}</p>
             <p>Region: {props.region}</p>
             <p>Capital: {props.capital}</p>
+            <Link to="/countries:name">A ver</Link>
         </div>
     )
 }
