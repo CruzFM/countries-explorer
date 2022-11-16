@@ -46,6 +46,7 @@ export const DisplayCountries = () => {
                 region={country.region}
                 population={country.population}
                 flag={country.flags.png}
+                key={country.name.common}
               />
             ))}
 

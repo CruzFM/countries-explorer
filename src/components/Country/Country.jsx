@@ -4,6 +4,8 @@ import axios from 'axios';
 
 export const Country = ()=>{
 
+    const [ country, setCountry ] = useState()
+
     let { name } = useParams();
     name = name.slice(1)
     console.log(name.trim())
@@ -11,9 +13,10 @@ export const Country = ()=>{
     useEffect( ()=>{
         const endPoint = `https://restcountries.com/v3.1/name/${name}?fullText=true`;
         axios.get(endPoint)
-            .then(res => console.log(res))
+            .then(res => setCountry(res.data[0]) )
     }, [])
 
+    console.log(country)
 
     return(
         <h1>
