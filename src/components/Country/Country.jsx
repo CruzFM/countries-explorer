@@ -6,9 +6,10 @@ export const Country = ()=>{
 
     let { name } = useParams();
     name = name.slice(1)
+    console.log(name.trim())
 
     useEffect( ()=>{
-        const endPoint = `https://restcountries.com/v2/name/${name}`;
+        const endPoint = `https://restcountries.com/v3.1/name/${name}?fullText=true`;
         axios.get(endPoint)
             .then(res => console.log(res))
     }, [])
