@@ -2,7 +2,7 @@
 
 export const Navbar = ( {handleToggleDarkMode, isDarkMode} )=>{
     return(
-        <header className="flex p-3 h-24 md:h-14">
+        <header className="flex p-3 h-24 md:h-14 bg-white dark:bg-slate-800">
             <span className="mr-auto">
                 Where in the world?
             </span>
