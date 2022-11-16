@@ -12,7 +12,7 @@ export const  Card  = (props)=>{
                 <p>Population: {props.population}</p>
                 <p>Region: {props.region}</p>
                 <p>Capital: {props.capital}</p>
-                <Link to="/countries:name">A ver</Link>
+                <Link to={`/countries:${props.name}`}>A ver</Link>
             </div>
         </div>
     )

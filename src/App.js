@@ -9,6 +9,7 @@ import { SearchAndFilter } from "./components/SearchAndFilter/SearchAndFilter"
 import { Card } from "../src/components/Card/Card"
 import { DisplayCountries } from './components/DisplayCountries/DisplayCountries';
 import { Home } from './components/Home/Home';
+import { Country } from './components/Country/Country';
 
 
 function App() {
@@ -65,7 +66,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/countries:name" />
+        <Route path="/countries:name" element={<Country />}/>
       </Routes>
     </div>
   );
