@@ -19,8 +19,20 @@ export const Country = ()=>{
     console.log(country)
 
     return(
-        <h1>
-            Hola Fer, soy {name}
-        </h1>
+        <div className="mx-auto my-0 w-11/12">
+        <div>
+            Back
+        </div>
+        <div>
+            <div>
+                <img src={country.flags.png} alt={`flag of ${country.name}`} className="w-full"/>
+            </div>
+            <div>
+                <h3>{country.name.official}</h3>
+            </div>
+            <div></div>
+        </div>
+        
+        </div>
     )
 }
