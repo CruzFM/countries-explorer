@@ -32,20 +32,23 @@ export const DisplayCountries = () => {
   console.log(moreCountries);
 
   return (
-    <div>
+    <div className="mx-auto my-0 w-11/12">
       <SearchAndFilter />
 
-      {countries.length > 0 &&
-        countries
-          .slice(0, loader)
-          .map((country) => (
-            <Card
-              name={country.name.common}
-              capital={country.capital}
-              region={country.region}
-              population={country.population}
-            />
-          ))}
+      <div className="grid place-items-center md:grid-cols-4 gap-4">
+        {countries.length > 0 &&
+          countries
+            .slice(0, loader)
+            .map((country) => (
+              <Card
+                name={country.name.common}
+                capital={country.capital}
+                region={country.region}
+                population={country.population}
+              />
+            ))}
+
+      </div>
       <div>
         <button
           style={{ width: "100%", backgroundColor: "blue", color: "white" }}
