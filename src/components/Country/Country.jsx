@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const Country = ()=>{
 
-    const [ country, setCountry ] = useState()
+    const [ country, setCountry ] = useState({})
 
     let { name } = useParams();
     name = name.slice(1)
@@ -23,15 +23,35 @@ export const Country = ()=>{
         <div>
             Back
         </div>
-        <div>
+        { Object.keys(country).length > 0 &&
+        
+        (<div>
             <div>
                 <img src={country.flags.png} alt={`flag of ${country.name}`} className="w-full"/>
             </div>
             <div>
-                <h3>{country.name.official}</h3>
+                <h3>{country.name.common}</h3>
+                <ul>
+                    <li>
+                        {/* <span>Native name:</span> {country.nativeName.common} */}
+                    </li>
+                    <li>
+                        <span>Population:</span> {country.population}
+                    </li>
+                    <li>
+                        <span>Region:</span> {country.region}
+                    </li>
+                    <li>
+                        <span>Sub region:</span> {country.subregion}
+                    </li>
+                    <li></li>
+                </ul>
             </div>
             <div></div>
+            
         </div>
+            )
+        }
         
         </div>
     )
