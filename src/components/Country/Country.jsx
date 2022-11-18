@@ -18,6 +18,16 @@ export const Country = ()=>{
 
     console.log(country)
 
+
+    const searchNativeName = () =>{
+        if( Object.keys(country).length > 0){
+            let { nativeName } = country.name;
+            let [language] = Object.keys(nativeName)
+            let {common, official} = nativeName[`${language}`]
+            return common;
+        }
+    }
+
     return(
         <div className="mx-auto my-0 w-11/12">
         <div>
@@ -33,7 +43,7 @@ export const Country = ()=>{
                 <h3>{country.name.common}</h3>
                 <ul>
                     <li>
-                        {/* <span>Native name:</span> {country.nativeName.common} */}
+                        <span>Native name:</span> {searchNativeName()}
                     </li>
                     <li>
                         <span>Population:</span> {country.population}
