@@ -54,7 +54,14 @@ export const Country = ()=>{
                     <li>
                         <span>Sub region:</span> {country.subregion}
                     </li>
-                    <li></li>
+                    <li>
+                        <span>Capital:</span> {country.capital}
+                    </li>
+                </ul>
+                <ul>
+                    <li><span>Top level domain:</span> {country.tld}</li>
+                    <li><span>Currencies:</span>To do: logic</li>
+                    <li><span>Languages:</span>to do: logic</li>
                 </ul>
             </div>
             <div></div>
