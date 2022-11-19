@@ -55,36 +55,36 @@ export const Country = ()=>{
             <div>
                 <img src={country.flags.png} alt={`flag of ${country.name}`} className="w-full"/>
             </div>
-            <div className="flex flex-col gap-2 justify-items-center">
-                <h3>{country.name.common}</h3>
+            <div className="flex flex-col gap-4 justify-items-center dark:text-gray-300">
+                <h3 className=" pt-7 md:pt-0 font-semibold text-xl dark:text-gray-300">{country.name.common}</h3>
                 <ul>
                     <li>
-                        <h5>Native name:</h5> {searchNativeName()}
+                        <span className=" font-medium text-base dark:text-gray-300">Native name:</span> {searchNativeName()}
                     </li>
                     <li>
-                        <h5>Population:</h5> {country.population}
+                        <span className=" font-medium text-base dark:text-gray-300">Population:</span> {country.population}
                     </li>
                     <li>
-                        <h5>Region:</h5> {country.region}
+                        <span className=" font-medium text-base dark:text-gray-300">Region:</span> {country.region}
                     </li>
                     <li>
-                        <h5>Sub region:</h5> {country.subregion}
+                        <span className=" font-medium text-base dark:text-gray-300">Sub region:</span> {country.subregion}
                     </li>
                     <li>
-                        <h5>Capital:</h5> {country.capital}
+                        <span className=" font-medium text-base dark:text-gray-300">Capital:</span> {country.capital}
                     </li>
                 </ul>
                 <ul>
-                    <li><h5>Top level domain:</h5> {country.tld}</li>
-                    <li><h5>Currencies:</h5> {searchCurrencies()}</li>
-                    <li><h5>Languages:</h5>
-                        <ul>
+                    <li><span className=" font-medium text-base dark:text-gray-300">Top level domain:</span> {country.tld}</li>
+                    <li><span className=" font-medium text-base">Currencies:</span> {searchCurrencies()}</li>
+                    <li className="flex gap-1"><span className=" font-medium text-base dark:text-gray-300">Languages:</span>
+                        <ul className="flex gap-1">
                             {searchLanguages()}
                         </ul>
                     </li>
                 </ul>
                 <div>
-                    <h5>Border countries: </h5>
+                    <span className=" font-medium text-base dark:text-gray-300">Border countries: </span>
                 </div>
             </div>
             
