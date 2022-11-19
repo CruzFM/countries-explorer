@@ -55,36 +55,38 @@ export const Country = ()=>{
             <div>
                 <img src={country.flags.png} alt={`flag of ${country.name}`} className="w-full"/>
             </div>
-            <div>
+            <div className="flex flex-col gap-2 justify-items-center">
                 <h3>{country.name.common}</h3>
                 <ul>
                     <li>
-                        <span>Native name:</span> {searchNativeName()}
+                        <h5>Native name:</h5> {searchNativeName()}
                     </li>
                     <li>
-                        <span>Population:</span> {country.population}
+                        <h5>Population:</h5> {country.population}
                     </li>
                     <li>
-                        <span>Region:</span> {country.region}
+                        <h5>Region:</h5> {country.region}
                     </li>
                     <li>
-                        <span>Sub region:</span> {country.subregion}
+                        <h5>Sub region:</h5> {country.subregion}
                     </li>
                     <li>
-                        <span>Capital:</span> {country.capital}
+                        <h5>Capital:</h5> {country.capital}
                     </li>
                 </ul>
                 <ul>
-                    <li><span>Top level domain:</span> {country.tld}</li>
-                    <li><span>Currencies:</span> {searchCurrencies()}</li>
-                    <li><span>Languages:</span>
+                    <li><h5>Top level domain:</h5> {country.tld}</li>
+                    <li><h5>Currencies:</h5> {searchCurrencies()}</li>
+                    <li><h5>Languages:</h5>
                         <ul>
                             {searchLanguages()}
                         </ul>
                     </li>
                 </ul>
+                <div>
+                    <h5>Border countries: </h5>
+                </div>
             </div>
-            <div></div>
             
         </div>
             )
