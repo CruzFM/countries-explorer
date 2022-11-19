@@ -51,11 +51,11 @@ export const Country = ()=>{
         </div>
         { Object.keys(country).length > 0 &&
         
-        (<div>
-            <div>
+        (<div className=" md:grid md:grid-cols-4 md:grid-rows-3 gap-2 ">
+            <div className="md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-3 dark:border-white border border-solid ">
                 <img src={country.flags.png} alt={`flag of ${country.name}`} className="w-full"/>
             </div>
-            <div className="flex flex-col gap-4 justify-items-center dark:text-gray-300">
+            <div className="flex flex-col gap-4 justify-items-center dark:text-gray-300 md:col-start-3 md:col-end-5 ">
                 <h3 className=" pt-7 md:pt-0 font-semibold text-xl dark:text-gray-300">{country.name.common}</h3>
                 <ul>
                     <li>
