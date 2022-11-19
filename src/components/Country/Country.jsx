@@ -22,9 +22,25 @@ export const Country = ()=>{
     const searchNativeName = () =>{
         if( Object.keys(country).length > 0){
             let { nativeName } = country.name;
-            let [language] = Object.keys(nativeName)
-            let {common, official} = nativeName[`${language}`]
+            let [language] = Object.keys(nativeName);
+            let {common, official} = nativeName[`${language}`];
             return common;
+        }
+    }
+
+    const searchCurrencies = ()=>{
+        if (Object.keys(country).length > 0){
+            let currency = country.currencies;
+            let [currencyName] = Object.keys(currency)
+            let {name, symbol} = currency[`${currencyName}`];
+            return name;
+        }
+    }
+
+    const searchLanguages = ()=>{
+        if(Object.keys(country).length > 0){
+            let languagesArray = Object.values(country.languages)
+            return languagesArray.map(language => <li>{language}</li>)
         }
     }
 
@@ -60,8 +76,12 @@ export const Country = ()=>{
                 </ul>
                 <ul>
                     <li><span>Top level domain:</span> {country.tld}</li>
-                    <li><span>Currencies:</span>To do: logic</li>
-                    <li><span>Languages:</span>to do: logic</li>
+                    <li><span>Currencies:</span> {searchCurrencies()}</li>
+                    <li><span>Languages:</span>
+                        <ul>
+                            {searchLanguages()}
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div></div>
