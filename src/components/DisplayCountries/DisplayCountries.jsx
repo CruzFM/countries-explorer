@@ -53,7 +53,8 @@ export const DisplayCountries = () => {
       </div>
       <div>
         <button
-          style={{ width: "100%", backgroundColor: "blue", color: "white" }}
+          // style={{ width: "100%", backgroundColor: "blue", color: "white" }}
+          className=" w-full bg-slate-400 text-black hover:bg-slate-700 hover:text-white dark:bg-sky-700 dark:text-white dark:hover:bg-sky-900 cursor-pointer my-2 p-2"
           onClick={handleLoadMoreCountries}
         >
           Load More
