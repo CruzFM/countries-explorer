@@ -35,7 +35,7 @@ export const DisplayCountries = () => {
     <div className="mx-auto my-0 w-11/12">
       <SearchAndFilter />
 
-      <div className="grid place-items-center md:grid-cols-4 gap-4">
+      <div className="grid place-items-center sm:grid-cols-2 md:grid-cols-4 gap-4">
         {countries.length > 0 &&
           countries
             .slice(0, loader)
@@ -53,7 +53,6 @@ export const DisplayCountries = () => {
       </div>
       <div>
         <button
-          // style={{ width: "100%", backgroundColor: "blue", color: "white" }}
           className=" w-full bg-slate-400 text-black hover:bg-slate-700 hover:text-white dark:bg-sky-700 dark:text-white dark:hover:bg-sky-900 cursor-pointer my-2 p-2"
           onClick={handleLoadMoreCountries}
         >

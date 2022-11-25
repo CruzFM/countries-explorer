@@ -56,7 +56,7 @@ function App() {
   return (
     <div
       className={
-        isDarkMode === true ? "dark bg-slate-900 min-h-screen" : "min-h-screen bg-slate-100"
+        isDarkMode === true ? "dark bg-slate-900 min-h-screen" : "min-h-screen bg-slate-200"
       }
     >
       <Navbar

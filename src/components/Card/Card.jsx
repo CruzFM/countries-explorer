@@ -11,9 +11,9 @@ export const  Card  = (props)=>{
             </div>
             <div className="row-start-2 row-end-4 px-3 py-1">
                 <h3 className=" py-3 font-bold text-lg">{props.name}</h3>
-                <p><span className="font-medium">Population:</span> {props.population}</p>
-                <p><span className="font-medium">Region:</span> {props.region}</p>
-                <p><span className="font-medium">Capital:</span> {props.capital}</p>
+                <p><span className="font-medium ">Population:</span> {props.population}</p>
+                <p><span className="font-medium ">Region:</span> {props.region}</p>
+                <p><span className="font-medium ">Capital:</span> {props.capital}</p>
             </div>
         </div>
     )
