@@ -51,38 +51,80 @@ export const Country = ()=>{
         </div>
         { Object.keys(country).length > 0 &&
         
-        (<div className=" md:grid md:grid-cols-4 md:grid-rows-3 gap-2 ">
-            <div className="md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-3 dark:border-white border border-solid ">
-                <img src={country.flags.png} alt={`flag of ${country.name}`} className="w-full"/>
+        // (<div className=" md:grid md:grid-cols-4 md:grid-rows-2 gap-2  dark:border-white border border-solid">
+        //     <div className="md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-3 dark:border-white border border-solid ">
+        //         <img src={country.flags.png} alt={`flag of ${country.name}`} className="w-full"/>
+        //     </div>
+        //     <div className="flex flex-col gap-4 justify-items-center dark:text-gray-300 md:col-start-3 md:col-end-5 ">
+        //         <h3 className=" pt-7 md:pt-0 font-semibold text-xl dark:text-gray-300">{country.name.common}</h3>
+        //         <ul>
+        //             <li>
+        //                 <span className=" font-medium text-base dark:text-gray-300">Native name:</span> {searchNativeName()}
+        //             </li>
+        //             <li>
+        //                 <span className=" font-medium text-base dark:text-gray-300">Population:</span> {country.population}
+        //             </li>
+        //             <li>
+        //                 <span className=" font-medium text-base dark:text-gray-300">Region:</span> {country.region}
+        //             </li>
+        //             <li>
+        //                 <span className=" font-medium text-base dark:text-gray-300">Sub region:</span> {country.subregion}
+        //             </li>
+        //             <li>
+        //                 <span className=" font-medium text-base dark:text-gray-300">Capital:</span> {country.capital}
+        //             </li>
+        //         </ul>
+        //         <ul>
+        //             <li><span className=" font-medium text-base dark:text-gray-300">Top level domain:</span> {country.tld}</li>
+        //             <li><span className=" font-medium text-base">Currencies:</span> {searchCurrencies()}</li>
+        //             <li className="flex gap-1"><span className=" font-medium text-base dark:text-gray-300">Languages:</span>
+        //                 <ul className="flex gap-1">
+        //                     {searchLanguages()}
+        //                 </ul>
+        //             </li>
+        //         </ul>
+        //         <div>
+        //             <span className=" font-medium text-base dark:text-gray-300">Border countries: </span>
+        //         </div>
+        //     </div>
+            
+        // </div>
+        (
+        <div className="  gap-2 dark:border-white border border-solid md:flex">
+            <div className=" dark:border-white border border-solid md:w-2/4 md:p-20">
+                <img src={country.flags.png} alt={`flag of ${country.name}`} className="w-full md:h-full"/>
             </div>
-            <div className="flex flex-col gap-4 justify-items-center dark:text-gray-300 md:col-start-3 md:col-end-5 ">
+            <div className="flex flex-col gap-4 justify-items-center dark:text-gray-300 md:w-2/4 md:py-20">
                 <h3 className=" pt-7 md:pt-0 font-semibold text-xl dark:text-gray-300">{country.name.common}</h3>
-                <ul>
-                    <li>
-                        <span className=" font-medium text-base dark:text-gray-300">Native name:</span> {searchNativeName()}
-                    </li>
-                    <li>
-                        <span className=" font-medium text-base dark:text-gray-300">Population:</span> {country.population}
-                    </li>
-                    <li>
-                        <span className=" font-medium text-base dark:text-gray-300">Region:</span> {country.region}
-                    </li>
-                    <li>
-                        <span className=" font-medium text-base dark:text-gray-300">Sub region:</span> {country.subregion}
-                    </li>
-                    <li>
-                        <span className=" font-medium text-base dark:text-gray-300">Capital:</span> {country.capital}
-                    </li>
-                </ul>
-                <ul>
-                    <li><span className=" font-medium text-base dark:text-gray-300">Top level domain:</span> {country.tld}</li>
-                    <li><span className=" font-medium text-base">Currencies:</span> {searchCurrencies()}</li>
-                    <li className="flex gap-1"><span className=" font-medium text-base dark:text-gray-300">Languages:</span>
-                        <ul className="flex gap-1">
-                            {searchLanguages()}
-                        </ul>
-                    </li>
-                </ul>
+                <div className="flex flex-col gap-4 justify-items-center md:flex-row">
+                    <ul>
+                        <li>
+                            <span className=" font-medium text-base dark:text-gray-300">Native name:</span> {searchNativeName()}
+                        </li>
+                        <li>
+                            <span className=" font-medium text-base dark:text-gray-300">Population:</span> {country.population}
+                        </li>
+                        <li>
+                            <span className=" font-medium text-base dark:text-gray-300">Region:</span> {country.region}
+                        </li>
+                        <li>
+                            <span className=" font-medium text-base dark:text-gray-300">Sub region:</span> {country.subregion}
+                        </li>
+                        <li>
+                            <span className=" font-medium text-base dark:text-gray-300">Capital:</span> {country.capital}
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span className=" font-medium text-base dark:text-gray-300">Top level domain:</span> {country.tld}</li>
+                        <li><span className=" font-medium text-base">Currencies:</span> {searchCurrencies()}</li>
+                        <li className="flex gap-1"><span className=" font-medium text-base dark:text-gray-300">Languages:</span>
+                            <ul className="flex gap-1">
+                                {searchLanguages()}
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
                 <div>
                     <span className=" font-medium text-base dark:text-gray-300">Border countries: </span>
                 </div>
