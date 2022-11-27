@@ -1,9 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
+import arrow from "../../images/arrow.png"
+
 export const Country = () => {
   const [country, setCountry] = useState({});
+
+  const navigate = useNavigate();
 
   let { name } = useParams();
   name = name.slice(1);
@@ -43,14 +47,24 @@ export const Country = () => {
 
   return (
     <div className="mx-auto my-0 w-11/12">
-      <div>Back</div>
+      <div className="p-3 pl-0 md:py-5 md:pl-10 ">
+        <div 
+          className=" w-36 py-2 px-4 flex items-center justify-around bg-white shadow-xl cursor-pointer hover:bg-blue-200 dark:bg-slate-700 dark:text-gray-300 dark:hover:bg-slate-800"
+          onClick={()=> navigate('/')}
+        >
+          <img src={arrow} alt="arrow back" className="w-10" /> 
+          <span className="">
+            Back
+          </span>
+        </div>
+      </div>
       {Object.keys(country).length > 0 && (
         <div className="  gap-2 dark:border-white md:flex">
           <div className=" dark:border-white md:w-2/4 md:p-20">
             <img
               src={country.flags.png}
               alt={`flag of ${country.name}`}
-              className="w-full md:h-full"
+              className="w-full md:h-full text-white"
             />
           </div>
           <div className="flex flex-col gap-4 justify-items-center dark:text-gray-300 md:w-2/4 md:py-20">
