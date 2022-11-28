@@ -32,7 +32,10 @@ export const DisplayCountries = () => {
   const handleSubmitSearch = (e)=>{
     e.preventDefault();
     let value = e.target.search.value
-    console.log(value)
+    const searchRegex = new RegExp(value, 'gi');
+    let searched = countries.filter(country => country.name.common.match(searchRegex));
+    console.log(searched)
+    setFilteredCountries(searched);
   }
 
   return (
@@ -59,7 +62,7 @@ export const DisplayCountries = () => {
       </div>
 
       <div className="grid place-items-center sm:grid-cols-2 md:grid-cols-4 gap-4">
-        {countries.length > 0 &&
+        {filteredCountries.length === 0 ?
           countries
             .slice(0, loader)
             .map((country) => (
@@ -71,7 +74,21 @@ export const DisplayCountries = () => {
                 flag={country.flags.png}
                 key={country.name.common}
               />
-            ))}
+            ))
+          : 
+          filteredCountries
+          .slice(0, loader)
+          .map((country) => (
+            <Card
+              name={country.name.common}
+              capital={country.capital}
+              region={country.region}
+              population={country.population}
+              flag={country.flags.png}
+              key={country.name.common}
+            />
+          ))
+          }
 
       </div>
       <div>
