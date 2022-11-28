@@ -18,7 +18,7 @@ export const DisplayCountries = () => {
     });
   }, []);
 
-  const [moreCountries, setMoreCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState([]);
 
 
   //--------------------------------------------
@@ -29,11 +29,34 @@ export const DisplayCountries = () => {
     setLoader(prevLoader => prevLoader + 10);
   }
 
-  console.log(moreCountries);
+  const handleSubmitSearch = (e)=>{
+    e.preventDefault();
+    let value = e.target.search.value
+    console.log(value)
+  }
 
   return (
     <div className="mx-auto my-0 w-11/12">
-      <SearchAndFilter />
+      {/* <SearchAndFilter /> */}
+      <div className="flex flex-col items-center md:flex-row md:justify-between p-4">
+        <div>
+          <form className="flex" onSubmit={(e)=> handleSubmitSearch(e)}>
+            <button className="bg-green-300 p-2 rounded-l-md" type="submit">Search</button>
+            <input type="input" name="search" className="border border-solid border-black rounded-r-md p-3" />
+          </form>
+        </div>
+        <div>
+          <form>
+            <select className="p-3">
+              <option>Filter by Region</option>
+              <option value="Africa">Africa</option>
+              <option value="America">America</option>
+              <option value="Europe">Europe</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </form>
+        </div>
+      </div>
 
       <div className="grid place-items-center sm:grid-cols-2 md:grid-cols-4 gap-4">
         {countries.length > 0 &&
