@@ -125,7 +125,7 @@ export const Country = () => {
             </div>
             <div>
               <span className=" font-medium text-base dark:text-gray-300">
-                Border countries:{" "}
+                Border countries:{country.borders.map(border=> <span className="px-1">{border}</span>)}
               </span>
             </div>
           </div>

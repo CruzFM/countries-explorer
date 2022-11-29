@@ -4,37 +4,18 @@ import {useState, useEffect} from 'react';
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
 
-
-import { SearchAndFilter } from "./components/SearchAndFilter/SearchAndFilter"
-import { Card } from "../src/components/Card/Card"
-import { DisplayCountries } from './components/DisplayCountries/DisplayCountries';
 import { Home } from './components/Home/Home';
 import { Country } from './components/Country/Country';
+import { Footer } from "./components/Footer/Footer"
 
 
 function App() {
-  // AXIOS ESTÁ INSTALADO FER, NO TE OLVIDES
-
-  //--------------COUNTRIES STATE---------------
-
-  // const [countries, setCountries] = useState([]);
-
-
-  // useEffect(() => {
-  //   let endPoint = "https://restcountries.com/v3.1/all";
-  //   axios.get(endPoint).then((res) => {
-  //     setCountries(res.data);
-  //   });
-  // }, []);
-
   //---------------DARK MODE-----------------
 
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleToggleDarkMode = () => {
     setIsDarkMode((prevDarkMode) => !prevDarkMode);
-
-    // console.log(isDarkMode)
   };
 
   // const storeDarkMode = ()=>{
@@ -68,6 +49,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/countries:name" element={<Country />}/>
       </Routes>
+
+      <Footer />
     </div>
   );
 }
