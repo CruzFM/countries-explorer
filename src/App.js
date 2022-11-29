@@ -1,5 +1,4 @@
 import './App.css';
-import axios from 'axios';
 import {useState, useEffect} from 'react';
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
@@ -37,7 +36,9 @@ function App() {
   return (
     <div
       className={
-        isDarkMode === true ? "dark bg-slate-900 min-h-screen" : "min-h-screen bg-gray-100"
+        isDarkMode === true
+          ? "dark bg-slate-900 min-h-screen"
+          : "min-h-screen bg-gray-100"
       }
     >
       <Navbar
@@ -47,7 +48,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/countries:name" element={<Country />}/>
+        <Route path="/countries:name" element={<Country />} />
       </Routes>
 
       <Footer />
