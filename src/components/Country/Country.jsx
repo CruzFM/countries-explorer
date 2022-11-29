@@ -45,6 +45,15 @@ export const Country = () => {
     }
   };
 
+  const searchBorders = ()=>{
+    if(Object.keys(country).length > 0 && country.borders?.length > 0){
+      // console.log(country.borders)
+      return country.borders.map(border=> <span className="px-1">{border}</span>)
+    } else{
+      return <span className="px-1">None</span>
+    }
+  }
+
   return (
     <div className="mx-auto my-0 w-11/12">
       <div className="p-3 pl-0 md:py-5 md:pl-10 ">
@@ -125,7 +134,7 @@ export const Country = () => {
             </div>
             <div>
               <span className=" font-medium text-base dark:text-gray-300">
-                Border countries:{country.borders.map(border=> <span className="px-1">{border}</span>)}
+                Border countries:{searchBorders()}
               </span>
             </div>
           </div>
